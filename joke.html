@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="cai.css"/>
+</head>
+<body>
+<script src="template.js"></script>
+
+<!--列表模板-->
+<script type="text/html" id="titList">
+    {{each data as value}}
+    <li Mid="{{value.id}}"><img src="{{value.albums[0]}}" alt=""/><p>{{value.title}}</p></li>
+    {{/each}}
+</script>
+
+<!--菜单模板-->
+<script type="text/html" id="menu">
+    <h1 class="title">{{result.title}}</h1>
+    <img src="{{result.albums[0]}}" alt=""/>
+    <p>{{result.burden}}</p>
+    <p>{{result.ingredients}}</p>
+    <p>标签</p>
+    <ul id="biaoqian" class="clearFix"></ul>
+    <p>{{result.imtro}}</p>
+    <p>步骤：</p>
+    <ul id="menuList"></ul>
+</script>
+
+
+
+
+<!--标签模板-->
+<script type="text/html" id="tag">
+    {{each result as value}}
+        <li>{{value}}</li>
+    {{/each}}
+</script>
+
+
+
+
+
+<!--步骤模板-->
+<script type="text/html" id="step">
+    {{each result as value}}
+    <li>
+        <img src="{{value.img}}" alt=""/>
+        <p>{{value.step}}</p>
+    </li>
+    {{/each}}
+</script>
+<div class="head">
+    <div class="logo"></div>
+    <div class="search">
+        <input type="text" id="text" placeholder="请输入要搜索的菜谱名称"/>
+        <input type="button" value="搜 索" id="btn"/>
+    </div>
+</div>
+<div class="left">
+    <div class="msg">一共有结果</div>
+    <ol id="tit" class="clearFix"></ol>
+</div>
+<!--<div class="box">-->
+    <!--<div class="scroll">-->
+        <!--<div class="bar" id="bar"></div>-->
+    <!--</div>-->
+    <!--<div class="content">-->
+
+        <!--<h1 class="title">名称:{{result.title}}</h1>-->
+        <!--<img src="{{result.albums[0]}}" alt=""/>-->
+        <!--<p>配料: 胡萝卜,适量;青椒,适量;黄椒,适量;蒜,适量;盐,适量;白糖,适量;辣椒油,适量;苹果醋,适量;香油,适量</p>-->
+        <!--<p>主要材料:腐竹,250g</p>-->
+        <!--<p>标签</p>-->
+        <!--<ul  class="clearFix"></ul>-->
+        <!--<p>说明腐竹是用豆浆加工而成的，吸收了黄豆的精华，在豆制品中营养最高。 营养学资料表明，每100克腐竹的蛋白质含量高达45克，维生素、钙、磷、铁、核黄素等含量都相当或超过了动物肉的含量，并含有人体所需的氨基酸、赖氨酸和色氨酸。 腐竹具有良好的健脑作用，能预防老年痴呆症的发生。这是因为腐竹中谷氨酸含量很高，为其他豆类或动物性食物的2—5倍，而谷氨酸在大脑活动中起着重要作用。此外，腐竹中所含有的卵磷脂还能降低血液中胆固醇的含量，达到防治高脂血症、动脉硬化的效果；其中的大豆皂甙有抗炎、抗溃疡等作用。 腐竹中含有丰富蛋白质，营养价值较高，其含有的卵磷脂可除掉附在血管壁上的胆固醇，防止血管硬化，预防心血管疾病，保护心脏。含有多种矿物质，补充钙质，防止因缺钙引起的骨质疏松，促进骨骼发育，对小儿、老人的骨骼生长极为有利。还含有丰富的铁，而且易被人体吸收，对缺铁性贫血有一定疗效。 腐竹为低脂肪高蛋白保健食品，其色鲜体薄，油亮清香，韧脆爽口，营养丰富，易于消化，增进食欲，性能不燥不寒，食法可繁可简，烹调任意调配，拌、炸、炖、炒、煮、焖、煲皆可。无论作主菜或配菜, 都可烹饪出色泽鲜美、香味扑鼻、酥脆嫩滑、风韵别致的荤、素佳肴。 今天我给大家推荐一款凉拌腐竹，做了两种口味，一种是咸鲜口味的，另一种是酸甜鲜辣口味的，喜欢吃辣的，就多放点辣椒油，很开胃的。辣椒油是自己做的，不含苏丹红、不含色素、不含防腐剂吃着放心。 腐竹含赖氨酸较多，彩椒含丰富的维生素C，腐竹和蔬菜搭配起到互补的作用，使其营养更为全面。又加了胡萝卜，胡萝卜含维生素A对眼睛是有好处的，老人、儿童、经常上网的人多吃点胡萝卜吧。"</p>-->
+        <!--<p>步骤：</p>-->
+        <!--<ul ></ul>-->
+        <!--<h1 class="title">{{result.title}}</h1>-->
+        <!--<img src="{{result.albums[0]}}" alt=""/>-->
+        <!--<p>{{result.burden}}</p>-->
+        <!--<p>{{result.ingredients}}</p>-->
+        <!--<p>标签</p>-->
+        <!--<ul  class="clearFix"></ul>-->
+        <!--<p>{{result.imtro}}</p>-->
+        <!--<p>步骤：</p>-->
+        <!--<ul ></ul><h1 class="title">{{result.title}}</h1>-->
+        <!--<img src="{{result.albums[0]}}" alt=""/>-->
+        <!--<p>{{result.burden}}</p>-->
+        <!--<p>{{result.ingredients}}</p>-->
+        <!--<p>标签</p>-->
+        <!--<ul  class="clearFix"></ul>-->
+        <!--<p>{{result.imtro}}</p>-->
+        <!--<p>步骤：</p>-->
+        <!--<ul ></ul><h1 class="title">{{result.title}}</h1>-->
+        <!--<img src="{{result.albums[0]}}" alt=""/>-->
+
+        <!--&lt;!&ndash;<h1 class="title">红烧肉</h1>&ndash;&gt;-->
+        <!--&lt;!&ndash;<img src="gengduo.png" alt=""/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<p>准备材料:五花肉，250g；萝卜 </p>&ndash;&gt;-->
+        <!--&lt;!&ndash;<p>标签</p>&ndash;&gt;-->
+        <!--&lt;!&ndash;<ul id="biaoqian" class="clearFix">&ndash;&gt;-->
+        <!--&lt;!&ndash;<li>家常菜</li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li>老年人</li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li>咸</li>&ndash;&gt;-->
+        <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+        <!--&lt;!&ndash;<p>加了鹌鹑蛋，祝大家岁岁平"鹌"</p>&ndash;&gt;-->
+        <!--&lt;!&ndash;<p>步骤：</p>&ndash;&gt;-->
+        <!--&lt;!&ndash;<ul id="menuList">&ndash;&gt;-->
+        <!--&lt;!&ndash;<li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<img src="gengduo.png" alt=""/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<p>描述</p>&ndash;&gt;-->
+        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+        <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+
+    <!--</div>-->
+
+<!--</div>-->
+</body>
+<script src="jquery-1.12.2.js"></script>
+<script src="cai.js"></script>
+</html>

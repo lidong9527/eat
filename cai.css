@@ -1,0 +1,157 @@
+.clearFix::before,.clearFix::after{
+    content: "";
+    display: block;
+    height: 0;
+    line-height: 0px;
+    clear: both;
+    visibility: hidden;
+}
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    background: #fae8c8;
+}
+.head{
+    background: #c90000;
+    width: 100%;
+    height: 150px;
+    text-align: center;
+}
+.head .logo{
+    float: left;
+    width: 30%;
+    height: 100%;
+}
+.head .search{
+    text-align: center;
+    float: left;
+    width: 30%;
+    height: 100%;
+    padding-top: 50px;
+    padding-left: 35px;
+    box-sizing: border-box;
+    margin-left: 75px;
+}
+.search input:nth-of-type(1){
+    width: 80%;
+    height: 35px;
+    box-sizing: border-box;
+    border:none;
+    outline: none;
+    padding-left: 10px;
+    float: left;
+    border-radius:5px 0px 0px 5px;
+}
+.search input:nth-of-type(2){
+    width: 18%;
+    height: 35px;
+    box-sizing: border-box;
+    border:none;
+    outline: none;
+    float: left;
+    background: #c90000;
+    color: white;
+    font-weight: bold;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius:0px 5px 5px 0px;
+}
+#btn:hover{
+    background: #950300;
+
+}
+.left{
+    width: 100%;
+}
+.msg{
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    background: white;
+    line-height: 50px;
+
+}
+ul,ol{
+    list-style: none;
+}
+.box{
+    width: 1000px;
+    height: 500px;
+    background: #0dfab5;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    overflow-y: hidden;
+    padding: 10px;
+}
+.content{
+    background: #45cccb;
+}
+#biaoqian li{
+    float: left;
+    color: blue;
+    margin-right: 10px;
+    padding: 5px;
+    background: #44c7ff;
+}
+
+
+#tit li{
+    cursor: pointer;
+    width: 15%;
+    text-align:center;
+    float: left;
+    position: relative;
+    background: white;
+    margin-left: 8%;
+    margin-top: 30px;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px #6c6c6c;
+
+}
+#tit li p{
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background: rgba(55, 55, 55, 0.5);
+    text-align:center;
+    padding-top: 15%;
+    color: #9bffee;
+    font-weight: bold;
+    font-family: simhei;
+    box-sizing: border-box;
+    transition:0.8s;
+}
+#tit li:hover p{
+    height: 50%;
+}
+#tit li img{
+    width: 100%;
+    height: 100%;
+}
+.content h1{
+    text-align: center;
+}
+.scroll {
+    width: 18px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #eee;
+}
+.bar {
+    /*height: 100px;*/
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    border-radius: 10px;
+    cursor: pointer;
+}
