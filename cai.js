@@ -9,6 +9,7 @@ $('#btn').click(function(){
         dataType:'jsonp',
         success:function(data){
             data = data.result;
+            console.log(data);
             var html = template('titList',data);
             $('.msg').html('一共有'+data.data.length+'种结果');
             console.log(data);
@@ -34,22 +35,32 @@ function add(data){
                 tags.result = s.split(';');
                 html = template('tag',tags);
                 $('#biaoqian').html(html);
+                $('.box').css({display:'block'});
 
             }
         }
     });
 }
+
+
+//点击关闭菜单
+$('#close').click(function(){
+    $('.box').css({display:'none'});
+})
+
+
+
 //addEvent(document,'mousewheel',function(){
 //    console.log(123);
 //})
 //document.attachEvent('onmousewheel',function(){
 //    console.log(123);
 //})
-
-$('.box').bind('mousewheel',function(event){
-    event = event || window.event;
-    console.dir(event);
-})
+//
+//$('.box').bind('mousewheel',function(event){
+//    event = event || window.event;
+//    console.dir(event);
+//})
 
 //滚动条
 //if($('.content').height() > $('.box').height()){
